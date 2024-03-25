@@ -1,0 +1,89 @@
+---
+title: My First Post
+published: 03-22-2024
+description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, consequatur voluptatum reprehenderit culpa nihil facere at in deleniti officia est illo quos, earum excepturi incidunt quia debitis eum eaque aperiam."
+author: Andrea Junior Berselli
+---
+
+export const meta = () => {
+  return [
+    { title: frontmatter.title, published: frontmatter.published },
+    {
+      name: "description",
+      content: frontmatter.description,
+    },
+  ];
+};
+
+## {frontmatter.title}
+
+import DateString from "../components/DateString"
+import AuthorString from "../components/AuthorString"
+import Counter from "../components/Counter";
+
+<div style={{
+  display: "flex",
+  flexDirection: "column"
+}}>
+<DateString dateString={frontmatter.published} />
+<AuthorString author={frontmatter.author} />
+</div>
+
+---
+
+### Using a component
+
+
+```jsx
+import Counter from "../components/Counter";
+
+<Counter />
+```
+
+...directly inside of the `.mdx` file
+
+This is how it looks, pretty good right?
+
+<Counter />
+
+```jsx title="counter.tsx"
+const Counter = () => {
+  const [count, setCount] = useState(0)
+  return (
+    <div className="not-prose flex items-center gap-4 text-white">
+      <button
+        className="rounded bg-sky-600 px-2 py-1"
+        onClick={() => setCount(count + 1)}
+      >
+        Increment
+      </button>
+      <p>Count: {count}</p>
+    </div>
+  )
+}
+```
+
+...and this is the `<Counter />`
+
+### Code block
+
+```jsx {6} title="index.jsx"
+<div>
+  <h2>C51 👽 Articles</h2>
+  <ul className="marker:text-white">
+    {posts.map(post => (
+      <li key={post.slug}>
+        <Post {...post} />
+      </li>
+    ))}
+  </ul>
+</div>
+```
+
+### Inline Code
+
+This is an example of `const a = x+10`.
+
+## Blockquote
+
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam luctus felis vel risus lacinia, eu fringilla urna mattis.

@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .code-bg {
+    background-color: var(--tw-prose-pre-bg);
+  }
+}
+
+@layer utilities {
+  figure pre [data-highlighted-line] {
+    @apply rounded-sm bg-gray-500/20 px-2;
+  }
+
+  figure figcaption[data-rehype-pretty-code-title] {
+    @apply italic;
+  }
+
+  code {
+    @apply code-bg px-1 !text-white before:hidden after:hidden;
+  }
+}
