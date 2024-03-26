@@ -13,7 +13,13 @@ export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: tailwindStyles },
 ]
 
-export const meta: MetaFunction = () => [{ title: 'Coders51 Blog' }]
+export const meta: MetaFunction = () => [
+  {
+    title: 'Coders51 Blog',
+    charset: 'utf-8',
+    viewport: 'width=device-width,initial-scale=1',
+  },
+]
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -25,7 +31,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         backgroundSize: 'cover',
         backgroundAttachment: 'fixed',
         background:
-          '#272963; background-image: radial-gradient(at 75.0% 73.0%, #5148a3 0px, transparent 50%),radial-gradient(at 71.0% 97.0%, #108dcc 0px, transparent 50%),radial-gradient(at 4.0% 30.0%, hsl(29, 19%, 54%) 0px, transparent 50%),radial-gradient(at 66.0% 98.0%, #7e18f2 0px, transparent 50%),radial-gradient(at 66.0% 86.0%, #38158f 0px, transparent 50%)',
+          '#272963; background-image: radial-gradient(at 75.0% 73.0%, #5148a3 0px, transparent 50%),radial-gradient(at 71.0% 97.0%, #108dcc 0px, transparent 50%),radial-gradient(at 4.0% 30.0%, #a08973 0px, transparent 50%),radial-gradient(at 66.0% 98.0%, #7e18f2 0px, transparent 50%),radial-gradient(at 66.0% 86.0%, #38158f 0px, transparent 50%)',
       }}
     >
       <head>

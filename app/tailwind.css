@@ -18,6 +18,14 @@
   }
 
   code {
-    @apply code-bg px-1 !text-white before:hidden after:hidden;
+    @apply code-bg px-1 before:hidden after:hidden;
   }
+
+  blockquote {
+    @apply rounded-md;
+  }
+}
+
+a {
+  @apply transition-all duration-300 hover:decoration-[#a08973];
 }
