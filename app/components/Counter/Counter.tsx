@@ -3,9 +3,9 @@ import { useState } from 'react'
 const Counter = () => {
   const [count, setCount] = useState(0)
   return (
-    <div className="not-prose flex items-center gap-4 text-white">
+    <div className="not-prose flex items-center gap-4">
       <button
-        className="rounded bg-sky-600 px-2 py-1"
+        className="bg-coders51 rounded px-2 py-1 text-white"
         onClick={() => setCount(count + 1)}
       >
         Increment

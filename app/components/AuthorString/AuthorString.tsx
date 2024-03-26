@@ -1,5 +1,7 @@
 const AuthorString = ({ author }: { author: string }) => {
-  return <i className="text-sm text-cyan-200">{author}</i>
+  return (
+    <i className="text-coders51 dark:text-coders51dark text-sm">{author}</i>
+  )
 }
 
 export default AuthorString

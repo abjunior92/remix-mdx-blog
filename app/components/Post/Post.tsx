@@ -1,6 +1,7 @@
 import { Link } from '@remix-run/react'
 
 import type { PostMeta } from '~/.server/posts'
+import AuthorString from '~/components/AuthorString'
 import DateString from '~/components/DateString'
 
 const Post = ({ slug, frontmatter }: PostMeta) => {
@@ -10,10 +11,10 @@ const Post = ({ slug, frontmatter }: PostMeta) => {
         <h3 className="line-clamp-2">{frontmatter.title}</h3>
       </Link>
       <p className="line-clamp-3">{frontmatter.description}</p>
-      <div className="block text-sm text-cyan-200">
+      <div className="text-coders51 block text-sm">
         <DateString dateString={frontmatter.published} />
         {' - '}
-        <i>{frontmatter.author}</i>
+        <AuthorString author={frontmatter.author} />
       </div>
     </article>
   )

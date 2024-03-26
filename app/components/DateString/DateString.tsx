@@ -10,7 +10,10 @@ export function transformDate(dateStr: string): string {
 
 const DateString = ({ dateString }: { dateString: string }) => {
   return (
-    <time className="text-sm text-cyan-200" dateTime={dateString}>
+    <time
+      className="text-coders51 dark:text-coders51dark text-sm"
+      dateTime={dateString}
+    >
       {transformDate(dateString)}
     </time>
   )

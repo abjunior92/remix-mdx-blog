@@ -15,7 +15,7 @@ export default function Blog() {
   return (
     <div>
       <h2>C51 👽 Articles</h2>
-      <ul className="marker:text-white">
+      <ul>
         {posts.map(post => (
           <li key={post.slug}>
             <Post {...post} />

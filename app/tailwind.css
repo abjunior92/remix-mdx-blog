@@ -25,7 +25,3 @@
     @apply rounded-md;
   }
 }
-
-a {
-  @apply transition-all duration-300 hover:decoration-[#a08973];
-}
