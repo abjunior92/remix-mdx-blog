@@ -20,7 +20,7 @@ export default function BlogLayout() {
   }
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="prose prose-indigo w-full pt-10 lg:prose-xl dark:prose-sky dark:prose-invert marker:text-black prose-blockquote:border-l-coders51 prose-code:text-white dark:marker:text-white prose-blockquote:dark:border-l-white">
+      <div className="prose prose-indigo w-full pt-10 lg:prose-xl dark:prose-sky dark:prose-invert marker:text-black prose-a:underline-offset-2 prose-blockquote:border-l-coders51 prose-code:text-white dark:marker:text-white prose-blockquote:dark:border-l-white">
         <div className="absolute right-10">
           <button
             onClick={toggleTheme}
