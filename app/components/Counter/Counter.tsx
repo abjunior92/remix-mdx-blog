@@ -5,7 +5,7 @@ const Counter = () => {
   return (
     <div className="not-prose flex items-center gap-4">
       <button
-        className="bg-coders51 rounded px-2 py-1 text-white"
+        className="rounded bg-coders51 px-2 py-1 text-white"
         onClick={() => setCount(count + 1)}
       >
         Increment

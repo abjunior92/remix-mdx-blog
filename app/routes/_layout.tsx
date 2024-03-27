@@ -17,7 +17,7 @@ export default function BlogLayout() {
   }
   return (
     <div className="flex justify-center">
-      <div className="prose-blockquote:border-l-coders51 prose prose-indigo w-full pt-10 lg:prose-xl dark:prose-sky dark:prose-invert marker:text-black prose-code:text-white dark:marker:text-white prose-blockquote:dark:border-l-white">
+      <div className="prose prose-indigo w-full pt-10 lg:prose-xl dark:prose-sky dark:prose-invert marker:text-black prose-blockquote:border-l-coders51 prose-code:text-white dark:marker:text-white prose-blockquote:dark:border-l-white">
         <div className="absolute right-10">
           <button
             onClick={toggleTheme}
@@ -35,8 +35,10 @@ export default function BlogLayout() {
             <Link
               to={'/blog'}
               className="flex items-center space-x-2 no-underline"
+              unstable_viewTransition
             >
-              <ArrowLeftCircleIcon className="h-6 w-6" /> <span>Articles</span>
+              <ArrowLeftCircleIcon className="h-6 w-6 transition duration-300 hover:scale-110" />{' '}
+              <span>Articles</span>
             </Link>
           )}
 

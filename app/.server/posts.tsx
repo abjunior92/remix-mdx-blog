@@ -1,7 +1,7 @@
 export type Frontmatter = {
   title: string
   description: string
-  published: string // DD-MM-YYYY
+  published: string
   author: string
   featured: boolean
 }

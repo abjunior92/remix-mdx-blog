@@ -11,7 +11,7 @@ const Post = ({ slug, frontmatter }: PostMeta) => {
         <h3 className="line-clamp-2">{frontmatter.title}</h3>
       </Link>
       <p className="line-clamp-3">{frontmatter.description}</p>
-      <div className="text-coders51 block text-sm">
+      <div className="block text-sm text-coders51">
         <DateString dateString={frontmatter.published} />
         {' - '}
         <AuthorString author={frontmatter.author} />

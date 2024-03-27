@@ -50,7 +50,7 @@ function Layout() {
       lang="en"
       className={clsx(
         theme ?? '',
-        'dark:bg-darkBg dark:bg-gradientDark bg-lightBg bg-gradientLight min-h-screen',
+        'min-h-screen bg-lightBg bg-gradientLight dark:bg-darkBg dark:bg-gradientDark',
       )}
       style={{
         backgroundRepeat: 'no-repeat',
@@ -61,7 +61,6 @@ function Layout() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="black-translucent" />
         <Meta />
         <Links />
         <ThemeHead ssrTheme={Boolean(data.theme)} />
