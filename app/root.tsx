@@ -50,7 +50,7 @@ function Layout() {
       lang="en"
       className={clsx(
         theme ?? '',
-        'min-h-screen bg-lightBg bg-gradientLight dark:bg-darkBg dark:bg-gradientDark',
+        'min-h-screen bg-lightBg bg-gradientLight transition-colors duration-300 dark:bg-darkBg dark:bg-gradientDark',
       )}
       style={{
         backgroundRepeat: 'no-repeat',

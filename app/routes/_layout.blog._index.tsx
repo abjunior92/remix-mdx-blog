@@ -14,7 +14,7 @@ export default function Blog() {
 
   return (
     <div>
-      <h2>C51 👽 Articles</h2>
+      <h1>C51 👽 Articles</h1>
       <ul>
         {posts.map(post => (
           <li key={post.slug}>

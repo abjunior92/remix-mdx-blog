@@ -4,6 +4,9 @@ import {
   SunIcon,
 } from '@heroicons/react/16/solid'
 import { Link, Outlet, useLocation } from '@remix-run/react'
+import { FacebookIcon } from '~/icons/FacebookIcon'
+import { LinkedinIcon } from '~/icons/LinkedinIcon'
+import { TwitterIcon } from '~/icons/TwitterIcon'
 import { Theme, useTheme } from '~/utils/theme-provider'
 
 export default function BlogLayout() {
@@ -16,7 +19,7 @@ export default function BlogLayout() {
     )
   }
   return (
-    <div className="flex justify-center">
+    <div className="flex flex-col items-center justify-center">
       <div className="prose prose-indigo w-full pt-10 lg:prose-xl dark:prose-sky dark:prose-invert marker:text-black prose-blockquote:border-l-coders51 prose-code:text-white dark:marker:text-white prose-blockquote:dark:border-l-white">
         <div className="absolute right-10">
           <button
@@ -44,6 +47,11 @@ export default function BlogLayout() {
 
           <Outlet />
         </div>
+      </div>
+      <div className="mx-auto flex items-center space-x-4 pb-10">
+        <LinkedinIcon />
+        <TwitterIcon />
+        <FacebookIcon />
       </div>
     </div>
   )
