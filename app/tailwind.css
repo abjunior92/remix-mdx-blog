@@ -24,4 +24,8 @@
   blockquote {
     @apply rounded-md bg-gray-500/10 dark:bg-black/10;
   }
+
+  .prose h2:first-of-type {
+    @apply relative w-fit before:absolute before:-left-2 before:bottom-0 before:top-0 before:w-5 before:rounded-sm before:bg-indigo-500/30 before:content-[""] dark:before:bg-coders51dark/30;
+  }
 }
