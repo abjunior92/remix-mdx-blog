@@ -46,17 +46,22 @@ function ThemeProvider({
   })
 
   const persistTheme = useFetcher()
-  // TODO: remove this when persistTheme is memoized properly
+
+  /** Without storing persistTheme as a ref, we would need to include it in the dependency array of the useEffect. At the time of writing, the result from useFetcher isn’t memorised properly. This means that the value of persistTheme may change, which would cause our useEffect to run even if the theme hasn’t changed.
+
+  By storing persistTheme in a ref, we can use the ref in the useEffect without adding it to the dependency array. This makes sure the hook only runs when theme changes, but also ensures that it uses the current persistTheme value when it is run. */
+
   const persistThemeRef = useRef(persistTheme)
+
   useEffect(() => {
     persistThemeRef.current = persistTheme
   }, [persistTheme])
 
-  const mountRun = useRef(false)
+  const isMounted = useRef(false)
 
   useEffect(() => {
-    if (!mountRun.current) {
-      mountRun.current = true
+    if (!isMounted.current) {
+      isMounted.current = true
       return
     }
     if (!theme) {
@@ -86,23 +91,14 @@ function ThemeProvider({
 }
 
 const clientThemeCode = `
-// hi there dear reader 👋
-// this is how I make certain we avoid a flash of the wrong theme. If you select
-// a theme, then I'll know what you want in the future and you'll not see this
-// script anymore.
 ;(() => {
   const theme = window.matchMedia(${JSON.stringify(prefersDarkMQ)}).matches
     ? 'dark'
     : 'light';
   const cl = document.documentElement.classList;
   const themeAlreadyApplied = cl.contains('light') || cl.contains('dark');
-  if (themeAlreadyApplied) {
-    // this script shouldn't exist if the theme is already applied!
-    console.warn(
-      "Hi there, could you let me know you're seeing this message? Thanks!",
-    );
-  } else {
-    cl.add(theme);
+  if (!themeAlreadyApplied) {
+    cl.add(theme); 
   }
   const meta = document.querySelector('meta[name=color-scheme]');
   if (meta) {
@@ -111,46 +107,8 @@ const clientThemeCode = `
     } else if (theme === 'light') {
       meta.content = 'light dark';
     }
-  } else {
-    console.warn(
-      "Hey, could you let me know you're seeing this message? Thanks!",
-    );
   }
 })();
-`
-
-const themeStylesCode = `
-  /* default light, but app-preference is "dark" */
-  html.dark {
-    light-mode {
-      display: none;
-    }
-  }
-
-  /* default light, and no app-preference */
-  html:not(.dark) {
-    dark-mode {
-      display: none;
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    /* prefers dark, but app-preference is "light" */
-    html.light {
-      dark-mode {
-        display: none;
-      }
-    }
-
-    /* prefers dark, and app-preference is "dark" */
-    html.dark,
-    /* prefers dark and no app-preference */
-    html:not(.light) {
-      light-mode {
-        display: none;
-      }
-    }
-  }
 `
 
 function ThemeHead({ ssrTheme }: { ssrTheme: boolean }) {
@@ -179,7 +137,6 @@ function ThemeHead({ ssrTheme }: { ssrTheme: boolean }) {
             // is finished loading.
             dangerouslySetInnerHTML={{ __html: clientThemeCode }}
           />
-          <style dangerouslySetInnerHTML={{ __html: themeStylesCode }} />
         </>
       )}
     </>
