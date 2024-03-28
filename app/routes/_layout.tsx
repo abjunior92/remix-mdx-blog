@@ -37,7 +37,7 @@ export default function BlogLayout() {
           {location.pathname !== '/blog' && (
             <Link
               to={'/blog'}
-              className="flex items-center space-x-2 no-underline"
+              className="flex w-fit items-center space-x-2 no-underline"
               unstable_viewTransition
             >
               <ArrowLeftCircleIcon className="h-6 w-6 transition duration-300 hover:scale-110" />{' '}
