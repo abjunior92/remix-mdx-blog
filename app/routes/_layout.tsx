@@ -41,14 +41,14 @@ export default function BlogLayout() {
               unstable_viewTransition
             >
               <ArrowLeftCircleIcon className="h-6 w-6 transition duration-300 hover:scale-110" />{' '}
-              <span>Articles</span>
+              <span>Blog</span>
             </Link>
           )}
 
           <Outlet />
         </div>
       </div>
-      <div className="mx-auto flex items-center space-x-4 pb-10">
+      <div className="mx-auto flex items-center gap-x-8 pb-10">
         <LinkedinIcon />
         <TwitterIcon />
         <FacebookIcon />

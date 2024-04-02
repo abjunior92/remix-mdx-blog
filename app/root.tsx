@@ -62,8 +62,8 @@ function Layout() {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
-        <Links />
         <ThemeHead ssrTheme={Boolean(data.theme)} />
+        <Links />
       </head>
       <body>
         <Outlet />

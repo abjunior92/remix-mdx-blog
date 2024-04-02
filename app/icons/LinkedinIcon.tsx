@@ -2,7 +2,11 @@ import { Link } from '@remix-run/react'
 
 export const LinkedinIcon = () => {
   return (
-    <Link target="_blank" to="https://www.linkedin.com/company/coders51">
+    <Link
+      target="_blank"
+      to="https://www.linkedin.com/company/coders51"
+      className="transition duration-300 hover:scale-110"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-4 w-4 text-coders51 lg:h-6 lg:w-6 dark:text-white"

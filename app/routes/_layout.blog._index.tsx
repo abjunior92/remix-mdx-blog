@@ -14,14 +14,14 @@ export default function Blog() {
 
   return (
     <div>
-      <h1>C51 👽 Articles</h1>
-      <ul>
+      <h1>C51 👽 Blog</h1>
+      <div className="flex flex-col space-y-4">
         {posts.map(post => (
-          <li key={post.slug}>
+          <div key={post.slug}>
             <Post {...post} />
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   )
 }
