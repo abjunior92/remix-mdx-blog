@@ -8,7 +8,7 @@ const Post = ({ slug, frontmatter }: PostMeta) => {
   return (
     <article className="space-y-2">
       <Link to={`/blog/${slug}`} unstable_viewTransition>
-        <h3 className="line-clamp-3 transition duration-300 hover:text-indigo-600 dark:hover:text-sky-500">
+        <h3 className="line-clamp-3 transition duration-300 hover:text-sky-600 dark:hover:text-sky-500">
           {frontmatter.title}
         </h3>
       </Link>
